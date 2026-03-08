@@ -147,12 +147,12 @@ Create `appsettings.Development.json` and fill in:
 
 | Name | Role |
 |---|---|
-| Student 1 | Team Leader / Solution Architect |
-| Student 2 | Business Analyst / Project Manager |
-| Student 3 | System Analyst / Database Engineer |
-| Student 4 | Full-Stack Developer |
-| Student 5 | Full-Stack Developer |
-| Student 6 | Full-Stack Developer |
+| Yousef Waleed | The Project Lead & Architect |
+| Ahmed Ahmed | The Database & API Logic (A) |
+| Rahma Sherif | The Database & API Logic (B) |
+| Ahmed Mohamed | The Identity & Payments Specialist |
+| Fathi Mohsen | The Frontend & UI Designers (A) |
+| Kyrillos Anis | The Frontend & UI Designers (B) |
 
 ---
 
