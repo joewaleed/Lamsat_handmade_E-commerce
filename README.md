@@ -66,7 +66,7 @@ If dispute → Admin reviews → Refund or Release
 
 | Layer | Technology |
 |---|---|
-| Backend | ASP.NET Core 8 Web API |
+| Backend | ASP.NET Core 10 Web API |
 | Frontend | Html + CSS with BootStrap |
 | Database | SQL Server + Entity Framework Core |
 | Authentication | ASP.NET Identity + JWT |
