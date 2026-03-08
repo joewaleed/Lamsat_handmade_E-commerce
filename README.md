@@ -3,7 +3,7 @@
 
 <img width="1920" height="1080" alt="lamsat" src="https://github.com/user-attachments/assets/46ea8e4b-b8f2-4f99-ac5d-80cc3693afda" />
 
-![.NET](https://img.shields.io/badge/.NET-8.0-512BD4?style=for-the-badge&logo=dotnet)
+![.NET](https://img.shields.io/badge/.NET-10.0-512BD4?style=for-the-badge&logo=dotnet)
 ![ASP.NET Core](https://img.shields.io/badge/ASP.NET_Core-Web_API-512BD4?style=for-the-badge&logo=dotnet)
 ![SQL Server](https://img.shields.io/badge/SQL_Server-CC2927?style=for-the-badge&logo=microsoftsqlserver)
 ![Paymob](https://img.shields.io/badge/Paymob-Payment_Gateway-00A86B?style=for-the-badge)
