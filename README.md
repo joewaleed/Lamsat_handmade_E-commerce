@@ -1,8 +1,7 @@
 # 🎨 Lamsat (لمسات)
 ### Egypt's First Trusted Handmade & Artisan Marketplace
 
-<img width="1376" height="768" alt="Lamsat_Logo" src="https://github.com/user-attachments/assets/92d6e7f1-7302-4233-8509-8dc797c484a6" />
-
+<img width="787" height="459" alt="Logo" src="https://github.com/user-attachments/assets/62a3afbe-2c3e-4e8b-8515-67dad968fc12" />
 
 ![.NET](https://img.shields.io/badge/.NET-10.0-512BD4?style=for-the-badge&logo=dotnet)
 ![ASP.NET Core](https://img.shields.io/badge/ASP.NET_Core-Web_API-512BD4?style=for-the-badge&logo=dotnet)
