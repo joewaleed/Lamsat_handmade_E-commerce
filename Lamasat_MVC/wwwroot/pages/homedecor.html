@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Decor | Lamsat</title>
+    <link rel="stylesheet" href="/style/style-homedecor.css">
+    <meta name="description" content="Discover authentic Egyptian handcrafted home decor. Woodwork, lighting, and accessories.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="../index.html" class="logo">Lams<span>a</span>t</a>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="jewelry.html">Jewelry</a></li>
+            <li><a href="shop.html">Pottery</a></li>
+            <li><a href="textiles.html">Textiles</a></li>
+            <li><a href="homedecor.html" class="active">Home Decor</a></li>
+        </ul>
+        <div class="nav-icons">
+            <button class="icon-btn" onclick="openSearch()"><i class="fas fa-search"></i></button>
+            <button class="icon-btn" onclick="openWishlistModal()" style="position:relative;"><i class="far fa-heart" id="wishIcon"></i><span class="badge wish-badge" id="wishBadge">0</span></button>
+            <button class="icon-btn" onclick="openCartModal()" style="position:relative;"><i class="fas fa-shopping-bag"></i><span class="badge cart-badge" id="cartBadge">0</span></button>
+            <button class="icon-btn" onclick="openAuth()"><i class="far fa-user"></i></button>
+        </div>
+    </nav>
+
+    <div class="breadcrumb"><a href="index.html">Home</a> › <span>Home Decor</span></div>
+    <div class="page-header"><h1>Home Decor Collection</h1><p>Handcrafted Woodwork, Artisan Chandeliers & Unique Accessories.</p></div>
+    <div class="categories-bar">
+        <div class="cat-pill active" onclick="filterCategory('all', this)">All</div>
+        <div class="cat-pill" onclick="filterCategory('woodwork', this)">Woodwork</div>
+        <div class="cat-pill" onclick="filterCategory('chandeliers', this)">Chandeliers</div>
+        <div class="cat-pill" onclick="filterCategory('accessories', this)">Accessories</div>
+    </div>
+
+    <section class="products-section"><div class="products-grid" id="productsGrid"></div></section>
+
+    <footer class="footer">
+        <div><h4 style="font-family:var(--font-heading);font-size:1.5rem;color:#d4b896;">Lamsat</h4><p>Empowering traditional artisans.</p></div>
+        <div><h4>Shop</h4><ul><li><a href="jewelry.html">Jewelry</a></li><li><a href="shop.html">Pottery</a></li><li><a href="textiles.html">Textiles</a></li><li><a href="homedecor.html">Home Decor</a></li></ul></div>
+        <div><h4>Artisans</h4><ul><li><a href="artisan.html">Hassan Jewelry</a></li></ul></div>
+        <div><h4>Help</h4><ul><li><a href="#">Shipping</a></li><li><a href="#">Returns</a></li></ul></div>
+        <div class="footer-bottom">&copy; 2026 Lamsat Egyptian Crafts. All rights reserved.</div>
+    </footer>
+
+    <div class="overlay" id="searchOverlay"><div class="modal"><button class="modal-close" onclick="closeSearch()">✕</button><h2>🔍 Search</h2><input type="text" class="search-box" id="searchInput" placeholder="Search..." oninput="doSearch()"><div id="searchResults"></div></div></div>
+    <div class="overlay" id="cartOverlay"><div class="modal"><button class="modal-close" onclick="closeCartModal()">✕</button><h2>🛒 Cart</h2><div id="cartItems"><div style="text-align:center;padding:40px;">Cart is empty</div></div><div class="cart-total" id="cartTotalRow" style="display:none;"><span>Total</span><span id="cartTotalPrice">EGP 0</span></div><button class="btn-full" id="checkoutBtn" style="display:none;" onclick="goToCheckout()">Proceed to Checkout</button></div></div>
+    <div class="overlay" id="wishlistOverlay"><div class="modal"><button class="modal-close" onclick="closeWishlistModal()">✕</button><h2>❤️ Wishlist</h2><div id="wishlistItems"><div style="text-align:center;padding:40px;">Wishlist is empty</div></div></div></div>
+    
+    <!-- AUTH MODAL -->
+    <div class="overlay" id="authOverlay">
+        <div class="modal">
+            <button class="modal-close" onclick="closeAuth()">✕</button>
+            <h2 id="authTitle">Welcome Back 👋</h2>
+            <form id="authForm" onsubmit="return handleAuth(event)">
+                <div class="form-group" id="nameGroup" style="display:none;">
+                    <label>Full Name</label>
+                    <input type="text" id="authName">
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="authEmail" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="authPassword" required minlength="4">
+                </div>
+                <button type="submit" class="btn-full" id="authSubmit">Sign In</button>
+            </form>
+            <p class="switch-text" id="switchText">
+                Don't have an account? <a href="javascript:void(0)" onclick="toggleAuth()">Create one</a>
+            </p>
+            <div id="authMessage" style="text-align:center;margin-top:8px;font-size:0.85rem;color:#e74c3c;"></div>
+        </div>
+    </div>
+    
+    <div id="toastContainer"></div>
+
+<script src="/js/js-homedecor.js"></script>
+</body>
+</html>
