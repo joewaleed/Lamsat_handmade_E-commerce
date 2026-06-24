@@ -1,0 +1,15 @@
+G:\Lamasat_Project\LamasatRepo\Lamasat\Lamasat.Infrastructure\bin\Debug\net8.0\Lamasat.Infrastructure.deps.json
+G:\Lamasat_Project\LamasatRepo\Lamasat\Lamasat.Infrastructure\bin\Debug\net8.0\Lamasat.Infrastructure.runtimeconfig.json
+G:\Lamasat_Project\LamasatRepo\Lamasat\Lamasat.Infrastructure\bin\Debug\net8.0\Lamasat.Infrastructure.dll
+G:\Lamasat_Project\LamasatRepo\Lamasat\Lamasat.Infrastructure\bin\Debug\net8.0\Lamasat.Infrastructure.pdb
+G:\Lamasat_Project\LamasatRepo\Lamasat\Lamasat.Infrastructure\obj\Debug\net8.0\Lamasat.Infrastructure.csproj.AssemblyReference.cache
+G:\Lamasat_Project\LamasatRepo\Lamasat\Lamasat.Infrastructure\obj\Debug\net8.0\Lamasat.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+G:\Lamasat_Project\LamasatRepo\Lamasat\Lamasat.Infrastructure\obj\Debug\net8.0\Lamasat.Infrastructure.AssemblyInfoInputs.cache
+G:\Lamasat_Project\LamasatRepo\Lamasat\Lamasat.Infrastructure\obj\Debug\net8.0\Lamasat.Infrastructure.AssemblyInfo.cs
+G:\Lamasat_Project\LamasatRepo\Lamasat\Lamasat.Infrastructure\obj\Debug\net8.0\Lamasat.Infrastructure.csproj.CoreCompileInputs.cache
+G:\Lamasat_Project\LamasatRepo\Lamasat\Lamasat.Infrastructure\obj\Debug\net8.0\Lamasat.Infrastructure.sourcelink.json
+G:\Lamasat_Project\LamasatRepo\Lamasat\Lamasat.Infrastructure\obj\Debug\net8.0\Lamasat.Infrastructure.dll
+G:\Lamasat_Project\LamasatRepo\Lamasat\Lamasat.Infrastructure\obj\Debug\net8.0\refint\Lamasat.Infrastructure.dll
+G:\Lamasat_Project\LamasatRepo\Lamasat\Lamasat.Infrastructure\obj\Debug\net8.0\Lamasat.Infrastructure.pdb
+G:\Lamasat_Project\LamasatRepo\Lamasat\Lamasat.Infrastructure\obj\Debug\net8.0\Lamasat.Infrastructure.genruntimeconfig.cache
+G:\Lamasat_Project\LamasatRepo\Lamasat\Lamasat.Infrastructure\obj\Debug\net8.0\ref\Lamasat.Infrastructure.dll

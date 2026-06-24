@@ -1,0 +1,12 @@
+G:\Lamasat_Project\LamasatRepo\Lamasat\Lamasat.Domain\bin\Debug\net8.0\Lamasat.Domain.deps.json
+G:\Lamasat_Project\LamasatRepo\Lamasat\Lamasat.Domain\bin\Debug\net8.0\Lamasat.Domain.dll
+G:\Lamasat_Project\LamasatRepo\Lamasat\Lamasat.Domain\bin\Debug\net8.0\Lamasat.Domain.pdb
+G:\Lamasat_Project\LamasatRepo\Lamasat\Lamasat.Domain\obj\Debug\net8.0\Lamasat.Domain.GeneratedMSBuildEditorConfig.editorconfig
+G:\Lamasat_Project\LamasatRepo\Lamasat\Lamasat.Domain\obj\Debug\net8.0\Lamasat.Domain.AssemblyInfoInputs.cache
+G:\Lamasat_Project\LamasatRepo\Lamasat\Lamasat.Domain\obj\Debug\net8.0\Lamasat.Domain.AssemblyInfo.cs
+G:\Lamasat_Project\LamasatRepo\Lamasat\Lamasat.Domain\obj\Debug\net8.0\Lamasat.Domain.csproj.CoreCompileInputs.cache
+G:\Lamasat_Project\LamasatRepo\Lamasat\Lamasat.Domain\obj\Debug\net8.0\Lamasat.Domain.sourcelink.json
+G:\Lamasat_Project\LamasatRepo\Lamasat\Lamasat.Domain\obj\Debug\net8.0\Lamasat.Domain.dll
+G:\Lamasat_Project\LamasatRepo\Lamasat\Lamasat.Domain\obj\Debug\net8.0\refint\Lamasat.Domain.dll
+G:\Lamasat_Project\LamasatRepo\Lamasat\Lamasat.Domain\obj\Debug\net8.0\Lamasat.Domain.pdb
+G:\Lamasat_Project\LamasatRepo\Lamasat\Lamasat.Domain\obj\Debug\net8.0\ref\Lamasat.Domain.dll
