@@ -1,0 +1,12 @@
+G:\Lamasat_Project\LamasatRepo\Lamasat\Lamasat.Application\bin\Debug\net8.0\Lamasat.Application.deps.json
+G:\Lamasat_Project\LamasatRepo\Lamasat\Lamasat.Application\bin\Debug\net8.0\Lamasat.Application.dll
+G:\Lamasat_Project\LamasatRepo\Lamasat\Lamasat.Application\bin\Debug\net8.0\Lamasat.Application.pdb
+G:\Lamasat_Project\LamasatRepo\Lamasat\Lamasat.Application\obj\Debug\net8.0\Lamasat.Application.GeneratedMSBuildEditorConfig.editorconfig
+G:\Lamasat_Project\LamasatRepo\Lamasat\Lamasat.Application\obj\Debug\net8.0\Lamasat.Application.AssemblyInfoInputs.cache
+G:\Lamasat_Project\LamasatRepo\Lamasat\Lamasat.Application\obj\Debug\net8.0\Lamasat.Application.AssemblyInfo.cs
+G:\Lamasat_Project\LamasatRepo\Lamasat\Lamasat.Application\obj\Debug\net8.0\Lamasat.Application.csproj.CoreCompileInputs.cache
+G:\Lamasat_Project\LamasatRepo\Lamasat\Lamasat.Application\obj\Debug\net8.0\Lamasat.Application.sourcelink.json
+G:\Lamasat_Project\LamasatRepo\Lamasat\Lamasat.Application\obj\Debug\net8.0\Lamasat.Application.dll
+G:\Lamasat_Project\LamasatRepo\Lamasat\Lamasat.Application\obj\Debug\net8.0\refint\Lamasat.Application.dll
+G:\Lamasat_Project\LamasatRepo\Lamasat\Lamasat.Application\obj\Debug\net8.0\Lamasat.Application.pdb
+G:\Lamasat_Project\LamasatRepo\Lamasat\Lamasat.Application\obj\Debug\net8.0\ref\Lamasat.Application.dll
