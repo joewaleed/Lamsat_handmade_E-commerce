@@ -1,0 +1,129 @@
+﻿@{
+    Layout = null; // Bypasses the default MVC _Layout.cshtml template entirely
+}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lamsat</title>
+    <link rel="stylesheet" href="~/style/style.css" asp-append-version="true">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="announcement-bar">
+        <span>Free Shipping on Orders Over EGP 1,000 • Handcrafted with Love in Egypt</span>
+    </div>
+
+    <nav class="navbar">
+        <a href="~/" class="logo">Lams<span>a</span>t</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="~/" class="active">Home</a></li>
+            <li><a href="~/pages/jewelry.html">Jewelry</a></li>
+            <li><a href="~/pages/shop.html">Pottery</a></li>
+            <li><a href="~/pages/textiles.html">Textiles</a></li>
+            <li><a href="~/pages/homedecor.html">Home Decor</a></li>
+        </ul>
+        <div class="nav-icons">
+            <button class="icon-btn" onclick="openSearch()"><i class="fas fa-search"></i></button>
+            <button class="icon-btn" onclick="openCartModal()" style="position:relative;"><i class="fas fa-shopping-bag"></i><span class="cart-badge" id="cartBadge">0</span></button>
+            <button class="icon-btn" onclick="openWishlistModal()" style="position:relative;"><i class="far fa-heart" id="wishIcon"></i><span class="wishlist-badge" id="wishlistBadge">0</span></button>
+            <button class="icon-btn" onclick="openAuth()"><i class="far fa-user"></i></button>
+            <a href="~/pages/dashboard.html" class="admin-btn"><i class="fas fa-crown"></i> Admin</a>
+            <a href="~/pages/manage-products.html" class="manage-products-btn"><i class="fas fa-boxes"></i> Products</a>
+            <a href="~/pages/vendor-dashboard.html" class="vendor-btn"><i class="fas fa-store"></i> Vendor</a>
+            <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">🏺 Handcrafted in Egypt</span>
+            <h1>Authentic Egyptian <br><em>Craftsmanship</em></h1>
+            <p class="hero-description">Discover the timeless beauty of handcrafted treasures, meticulously shaped by skilled hands from the heart of Egypt's artistic heritage.</p>
+            <a href="#products" class="btn-primary">Shop Collection</a>
+        </div>
+        <div class="hero-image">
+            <a href="~/pages/artisan.html" class="hero-img-wrapper">
+                <img src="https://i.postimg.cc/kgr3hHZQ/Gemini-Generated-Image-bcylvibcylvibcyl.png" alt="Egyptian Artisan">
+            </a>
+        </div>
+    </section>
+
+    <section class="products-section" id="products">
+        <div class="section-header">
+            <h2 class="section-title">Featured Products</h2>
+            <a href="~/pages/shop.html" class="btn-primary" style="background:transparent; color:var(--text-dark); border:2px solid var(--border-medium);">View All →</a>
+        </div>
+        <div class="products-grid" id="productsGrid"></div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand"><div class="logo-footer">Lamsat</div><p>Connecting you with Egypt's finest artisans.</p></div>
+            <div class="footer-col"><h4>Shop</h4><ul><li><a href="~/pages/jewelry.html">Jewelry</a></li><li><a href="~/pages/shop.html">Pottery</a></li><li><a href="~/pages/textiles.html">Textiles</a></li><li><a href="~/pages/homedecor.html">Home Decor</a></li></ul></div>
+            <div class="footer-col"><h4>About</h4><ul><li><a href="~/pages/artisan.html">Our Artisans</a></li></ul></div>
+            <div class="footer-col"><h4>Support</h4><ul><li><a href="#">Shipping</a></li><li><a href="#">Returns</a></li><li><a href="#">Contact</a></li></ul></div>
+            <div class="footer-col"><h4>Legal</h4><ul><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li></ul></div>
+        </div>
+        <div class="footer-bottom"><p class="footer-copyright">© 2026 Lamsat Egyptian Crafts. All rights reserved.</p><ul class="footer-legal"><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li></ul></div>
+    </footer>
+
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-container">
+            <div class="search-header">
+                <h3><i class="fas fa-search" style="color: var(--primary);"></i> Search Products</h3>
+                <button class="search-close" onclick="closeSearch()"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="search-input-wrapper">
+                <input type="text" id="searchInput" placeholder="Search for pottery, jewelry, textiles..." oninput="performSearch()" autofocus>
+            </div>
+            <div class="search-results" id="searchResults">
+                <div class="no-results">
+                    <i class="fas fa-search" style="font-size: 2rem; opacity: 0.5; display: block; margin-bottom: 10px;"></i>
+                    <p>Start typing to find authentic Egyptian crafts...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay" id="cartOverlay">
+        <div class="modal">
+            <button class="modal-close" onclick="closeCartModal()">✕</button>
+            <h2>🛒 Your Cart</h2>
+            <div id="cartItems"></div>
+            <div class="cart-total" id="cartTotalRow" style="display:none;"><span>Total</span><span id="cartTotalPrice"></span></div>
+            <button class="btn-full" id="checkoutBtn" style="display:none;" onclick="goToCheckout()">Proceed to Checkout →</button>
+        </div>
+    </div>
+
+    <div class="overlay" id="wishlistOverlay">
+        <div class="modal">
+            <button class="modal-close" onclick="closeWishlistModal()">✕</button>
+            <h2>❤️ Wishlist</h2>
+            <div id="wishlistItems"></div>
+        </div>
+    </div>
+
+    <div class="overlay" id="authOverlay">
+        <div class="modal">
+            <button class="modal-close" onclick="closeAuth()">✕</button>
+            <h2 id="authTitle">Welcome Back 👋</h2>
+            <form id="authForm" onsubmit="return handleAuth(event)">
+                <div class="form-group" id="nameGroup" style="display:none;"><label>Full Name</label><input type="text" id="authName"></div>
+                <div class="form-group"><label>Email</label><input type="email" id="authEmail" required></div>
+                <div class="form-group"><label>Password</label><input type="password" id="authPassword" required minlength="4"></div>
+                <button type="submit" class="btn-full" id="authSubmit">Sign In</button>
+            </form>
+            <p class="switch-text" id="switchText">Don't have an account? <a onclick="toggleAuth()">Create one</a></p>
+            <div id="authMessage" style="text-align:center;margin-top:8px;font-size:0.85rem;color:#e74c3c;"></div>
+        </div>
+    </div>
+
+    <div id="toastContainer"></div>
+    <script src="~/js/js.js" asp-append-version="true"></script>
+</body>
+</html>

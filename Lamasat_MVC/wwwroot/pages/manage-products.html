@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Products | Lamsat</title>
+    <link rel="stylesheet" href="/style/style-manage-products.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>📦 Manage <span>Products</span></h1>
+        <button class="btn-add" onclick="openAddModal()"><i class="fas fa-plus"></i> Add New Product</button>
+    </div>
+
+    <div class="products-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th><th>Image</th><th>Name</th><th>Category</th><th>Price (EGP)</th><th>Rating</th><th>Sale</th><th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="productsTableBody">
+                <!-- هتتعبى بالجافاسكريبت -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Modal Add/Edit Product -->
+<div id="productModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 id="modalTitle">Add Product</h2>
+            <button class="close-modal" onclick="closeModal()">&times;</button>
+        </div>
+        <form id="productForm" onsubmit="saveProduct(event)">
+            <input type="hidden" id="productId">
+            <div class="form-group"><label>Product Name</label><input type="text" id="prodName" required></div>
+            <div class="form-group"><label>Category</label>
+                <select id="prodCategory">
+                    <option value="pottery">Pottery</option>
+                    <option value="jewelry">Jewelry</option>
+                    <option value="textiles">Textiles</option>
+                    <option value="decor">Home Decor</option>
+                </select>
+            </div>
+            <div class="form-group"><label>Price (EGP)</label><input type="number" id="prodPrice" required></div>
+            <div class="form-group"><label>Original Price (optional)</label><input type="number" id="prodOriginalPrice" placeholder="Leave empty if no sale"></div>
+            <div class="form-group"><label>Rating (1-5)</label><input type="number" step="0.1" id="prodRating" value="4.5" required></div>
+            <div class="form-group"><label>Reviews Count</label><input type="number" id="prodReviews" value="0" required></div>
+            <div class="form-group"><label>Origin (e.g., Cairo, Upper Egypt)</label><input type="text" id="prodOrigin" placeholder="Cairo"></div>
+            <div class="form-group"><label>Image URL</label><input type="text" id="prodImage" placeholder="https://..."></div>
+            <div class="form-group"><label>On Sale?</label>
+                <select id="prodOnSale">
+                    <option value="false">No</option>
+                    <option value="true">Yes</option>
+                </select>
+            </div>
+            <button type="submit" class="btn-save">Save Product</button>
+        </form>
+    </div>
+</div>
+
+<script src="/js/js-manage-products.js"></script>
+</body>
+</html>

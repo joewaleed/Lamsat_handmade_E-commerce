@@ -1,0 +1,212 @@
+     * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #f5f0e8;
+            color: #2d2a26;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+        }
+
+        h1 span {
+            color: #c0956b;
+        }
+
+        .btn-add {
+            background: #c0956b;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+
+        .btn-add:hover {
+            background: #a67c52;
+            transform: scale(1.02);
+        }
+
+        /* Form Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 24px;
+            padding: 30px;
+            width: 90%;
+            max-width: 550px;
+            max-height: 85vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #5c5650;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0d7c8;
+            border-radius: 16px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .btn-save {
+            background: #1e1c19;
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 30px;
+            width: 100%;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-save:hover {
+            background: #c0956b;
+        }
+
+        /* Products Table */
+        .products-table {
+            background: white;
+            border-radius: 24px;
+            padding: 20px;
+            overflow-x: auto;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            text-align: left;
+            padding: 15px 10px;
+            background: #f5f0e8;
+            color: #5c5650;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 15px 10px;
+            border-bottom: 1px solid #e8e2d9;
+            vertical-align: middle;
+        }
+
+        .product-img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .btn-edit {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 6px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-right: 8px;
+        }
+
+        .btn-delete {
+            background: #ef4444;
+            color: white;
+            border: none;
+            padding: 6px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #1e1c19;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 30px;
+            z-index: 2000;
+            animation: slideIn 0.3s;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+            th, td {
+                font-size: 0.8rem;
+                padding: 10px 5px;
+            }
+        }

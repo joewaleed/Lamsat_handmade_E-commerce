@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Lamsat</title>
+    <link rel="stylesheet" href="/style/style-dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<div class="sidebar" id="sidebar">
+    <h2>Lams<span>a</span>t</h2>
+    <div class="nav-item active" onclick="showSection('dashboard')">
+        <i class="fas fa-tachometer-alt"></i> Dashboard
+    </div>
+    <div class="nav-item" onclick="showSection('sellers')">
+        <i class="fas fa-store"></i> Sellers
+    </div>
+    <div class="nav-item" onclick="showSection('disputes')">
+        <i class="fas fa-gavel"></i> Disputes
+    </div>
+    <div class="nav-item" onclick="showSection('analytics')">
+        <i class="fas fa-chart-line"></i> Analytics
+    </div>
+</div>
+
+<div class="main">
+    <div class="top-bar">
+        <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+        <div class="admin-badge">Admin Portal</div>
+    </div>
+
+    <!-- Dashboard Section -->
+    <div id="dashboardSection" class="section active-section">
+        <div class="stats-grid">
+            <div class="stat-card"><div class="stat-title">Total Revenue</div><div class="stat-value">$48.2K</div><div>📈 +12.5%</div></div>
+            <div class="stat-card"><div class="stat-title">Active Sellers</div><div class="stat-value">1,250</div><div>📉 -10%</div></div>
+            <div class="stat-card"><div class="stat-title">Total Orders</div><div class="stat-value">8,942</div><div>📈 +18%</div></div>
+            <div class="stat-card"><div class="stat-title">Open Disputes</div><div class="stat-value">48</div><div>📉 -2%</div></div>
+        </div>
+        <div class="charts-row">
+            <div class="chart-card"><h3>Revenue Trend</h3><canvas id="revenueChart"></canvas></div>
+            <div class="chart-card"><h3>Sales by Category</h3><canvas id="categoryChart"></canvas></div>
+        </div>
+    </div>
+
+    <!-- Sellers Section -->
+    <div id="sellersSection" class="section">
+        <div class="table-card">
+            <div class="table-header">
+                <h3>📦 Pending Seller Approvals</h3>
+                <span class="badge">3 pending</span>
+            </div>
+            <table>
+                <thead><tr><th>Seller Name</th><th>Category</th><th>Date</th><th>Status</th><th>Action</th></tr></thead>
+                <tbody id="pendingSellersTable">
+                    <tr><td>Cairo Electronics</td><td>Electronics</td><td>2023-10-24</td><td class="status-pending">Pending</td><td><button class="btn-action" onclick="approveSeller(this)">Approve</button></td></tr>
+                    <tr><td>Nile Crafts</td><td>Handmade</td><td>2023-10-25</td><td class="status-pending">Pending</td><td><button class="btn-action" onclick="approveSeller(this)">Approve</button></td></tr>
+                    <tr><td>Alex Fabrics</td><td>Textiles</td><td>2023-10-25</td><td class="status-pending">Pending</td><td><button class="btn-action" onclick="approveSeller(this)">Approve</button></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="table-card">
+            <div class="table-header"><h3>✅ Active Sellers</h3><span class="badge">1,247 active</span></div>
+            <table>
+                <thead><tr><th>Seller Name</th><th>Category</th><th>Joined</th><th>Total Sales</th><th>Status</th></tr></thead>
+                <tbody>
+                    <tr><td>Golden Handicrafts</td><td>Home Decor</td><td>Jan 2024</td><td>2,340</td><td class="status-active">Active</td></tr>
+                    <tr><td>Pharaoh's Treasures</td><td>Jewelry</td><td>Feb 2024</td><td>1,890</td><td class="status-active">Active</td></tr>
+                    <tr><td>Desert Weavers</td><td>Textiles</td><td>Mar 2024</td><td>978</td><td class="status-active">Active</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Disputes Section -->
+    <div id="disputesSection" class="section">
+        <div class="table-card">
+            <div class="table-header"><h3>⚠️ Recent Disputes</h3><span class="badge">2 open</span></div>
+            <table>
+                <thead><tr><th>Order ID</th><th>User</th><th>Issue</th><th>Status</th><th>Action</th></tr></thead>
+                <tbody id="disputesTable">
+                    <tr><td>WPDD-00226</td><td>Ahmed M.</td><td>Items not yet served</td><td class="status-pending">High</td><td><button class="btn-action" onclick="resolveDispute(this)">Resolve</button></td></tr>
+                    <tr><td>HMDD-86721</td><td>Sara K.</td><td>Wrong item delivered</td><td class="status-active">In Progress</td><td><button class="btn-action" onclick="resolveDispute(this)">Resolve</button></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Analytics Section -->
+    <div id="analyticsSection" class="section">
+        <div class="table-card">
+            <h3>📊 Platform Statistics</h3>
+            <div style="padding: 20px; text-align: center;">
+                <p>📈 Monthly Growth: +18.5%</p>
+                <p>🛒 Average Order Value: EGP 1,450</p>
+                <p>⭐ Top Category: Handmade (32%)</p>
+                <p>🌍 Top Region: Cairo (48%)</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/js-dashboard.js"></script>
+</body>
+</html>
