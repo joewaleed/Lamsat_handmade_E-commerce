@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pottery Shop | Lamsat</title>
+    <link rel="stylesheet" href="/style/style-shop.css">
+    <meta name="description" content="Browse our Pottery Collection - Authentic Egyptian handcrafted treasures.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="../index.html" class="logo">Lams<span>a</span>t</a>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="jewelry.html">Jewelry</a></li>
+            <li><a href="shop.html" class="active">Pottery</a></li>
+            <li><a href="textiles.html">Textiles</a></li>
+            <li><a href="homedecor.html">Home Decor</a></li>
+        </ul>
+        <div class="nav-icons">
+            <button class="icon-btn" onclick="openSearch()" title="Search"><i class="fas fa-search"></i></button>
+            <button class="icon-btn" onclick="openWishlistModal()" style="position:relative;" title="Wishlist"><i class="far fa-heart" id="wishIcon"></i><span class="badge wish-badge" id="wishBadge">0</span></button>
+            <button class="icon-btn" onclick="goToCheckout()" style="position:relative;" title="Cart"><i class="fas fa-shopping-bag"></i><span class="badge cart-badge" id="cartBadge">0</span></button>
+            <button class="icon-btn" onclick="openAuthModal()" title="Account"><i class="far fa-user"></i></button>
+        </div>
+    </nav>
+
+    <div class="breadcrumb"><a href="index.html">Home</a> › <span>Pottery Collection</span></div>
+
+    <div class="main-content">
+        <aside class="sidebar">
+            <h3>Pottery</h3>
+            <div class="sidebar-section">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="shop.html" class="active"><i class="fas fa-chevron-right"></i> Pottery</a></li>
+                    <li><a href="jewelry.html"><i class="fas fa-chevron-right"></i> Jewelry</a></li>
+                    <li><a href="textiles.html"><i class="fas fa-chevron-right"></i> Textiles</a></li>
+                    <li><a href="homedecor.html"><i class="fas fa-chevron-right"></i> Home Decor</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-section price-range">
+                <h4>Price Range (EGP)</h4>
+                <input type="range" min="50" max="5000" value="5000" id="priceSlider" oninput="updatePrice()">
+                <div class="price-labels"><span>50</span><span id="priceDisplay">Up to 5000</span><span>5000</span></div>
+            </div>
+            <div class="sidebar-section">
+                <h4>Seller Rating</h4>
+                <div class="rating-option" onclick="filterByRating(4)"><input type="radio" name="rating" id="r4"><label for="r4">★★★★★ 4+ Stars</label></div>
+                <div class="rating-option" onclick="filterByRating(3)"><input type="radio" name="rating" id="r3"><label for="r3">★★★☆☆ 3+ Stars</label></div>
+            </div>
+            <div class="sidebar-section">
+                <h4>Location</h4>
+                <select class="location-select" onchange="filterByLocation(this.value)">
+                    <option value="all">All Locations</option>
+                    <option value="Cairo">Cairo</option>
+                    <option value="Upper Egypt">Upper Egypt</option>
+                    <option value="Aswan">Aswan</option>
+                    <option value="Fayoum">Fayoum</option>
+                </select>
+            </div>
+        </aside>
+
+        <section class="products-area">
+            <div class="products-header">
+                <p><strong>Pottery Results</strong></p>
+                <select class="sort-select" onchange="sortProducts(this.value)">
+                    <option value="newest">Sort by: Newest Arrivals</option>
+                    <option value="low">Price: Low to High</option>
+                    <option value="high">Price: High to Low</option>
+                    <option value="rating">Top Rated</option>
+                </select>
+            </div>
+            <div class="products-grid" id="productsGrid"></div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 Lamsat Egyptian Crafts. All rights reserved.</p>
+        <div class="footer-links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+    </footer>
+
+    <div class="search-overlay" id="searchOverlay"><button class="search-close" onclick="closeSearch()">✕</button><input type="text" class="search-box" id="searchInput" placeholder="Search..." oninput="doSearch()" autofocus><div class="search-results" id="searchResults"></div></div>
+    <div class="overlay" id="cartOverlay"><div class="modal"><button class="modal-close" onclick="closeCartModal()">✕</button><h2>🛒 Your Cart</h2><div id="cartItems"><div class="empty-cart"><i class="fas fa-shopping-bag"></i><p>Your cart is empty</p></div></div><div class="cart-total" id="cartTotalRow" style="display:none;"><span>Total</span><span id="cartTotalPrice">EGP 0</span></div><button class="btn-full" id="checkoutBtn" style="display:none;" onclick="goToCheckout()">Proceed to Checkout</button></div></div>
+    <div class="overlay" id="wishlistOverlay"><div class="modal"><button class="modal-close" onclick="closeWishlistModal()">✕</button><h2>❤️ My Wishlist</h2><div id="wishlistItems"><div class="empty-cart"><i class="far fa-heart"></i><p>Your wishlist is empty</p></div></div></div></div>
+    
+    <!-- AUTH MODAL -->
+    <div class="overlay" id="authOverlay">
+        <div class="modal">
+            <button class="modal-close" onclick="closeAuthModal()">✕</button>
+            <h2 id="authTitle">Welcome Back 👋</h2>
+            <form id="authForm" onsubmit="return handleAuth(event)">
+                <div class="form-group" id="nameGroup" style="display:none;">
+                    <label>Full Name</label>
+                    <input type="text" id="authName">
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="authEmail" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="authPassword" required minlength="4">
+                </div>
+                <button type="submit" class="btn-full" id="authSubmit">Sign In</button>
+            </form>
+            <p class="switch-text" id="switchText">
+                Don't have an account? <a href="javascript:void(0)" onclick="toggleAuth()">Create one</a>
+            </p>
+            <div id="authMessage" style="text-align:center;margin-top:8px;font-size:0.85rem;color:#e74c3c;"></div>
+        </div>
+    </div>
+    
+    <div id="toastContainer"></div>
+
+<script src="/js/js-shop.js"></script>
+</body>
+</html>

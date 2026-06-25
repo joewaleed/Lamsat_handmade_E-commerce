@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Dashboard | Lamsat</title>
+    <link rel="stylesheet" href="/style/style-vendor-dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+
+<div class="sidebar" id="sidebar">
+    <h2>Lams<span>a</span>t</h2>
+    <div class="nav-item" onclick="showSection('dashboard')">
+        <i class="fas fa-tachometer-alt"></i> Dashboard
+    </div>
+    <div class="nav-item" onclick="showSection('products')">
+        <i class="fas fa-box"></i> Products
+    </div>
+    <div class="nav-item" onclick="showSection('orders')">
+        <i class="fas fa-shopping-cart"></i> Orders
+    </div>
+    <div class="nav-item" onclick="showSection('analytics')">
+        <i class="fas fa-chart-line"></i> Analytics
+    </div>
+</div>
+
+<div class="main">
+    <div class="top-bar">
+        <div>
+            <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+            <div class="welcome-text">
+                <h1>Welcome back, Elena 👋</h1>
+                <p>Here's what's happening with your artisan shop today.</p>
+            </div>
+        </div>
+        <div class="vendor-badge">
+            <i class="fas fa-store"></i> Vendor Portal
+        </div>
+    </div>
+
+    <!-- ==================== DASHBOARD SECTION ==================== -->
+    <div id="dashboardSection" class="section active-section">
+        <div class="stats-row">
+            <div class="stat-card">
+                <h3><i class="fas fa-dollar-sign"></i> Total Sales</h3>
+                <div class="stat-number">$4,250.00</div>
+            </div>
+            <div class="stat-card">
+                <h3><i class="fas fa-clock"></i> Pending Orders</h3>
+                <div class="stat-number" id="pendingOrdersCount">12</div>
+            </div>
+            <div class="stat-card">
+                <h3><i class="fas fa-wallet"></i> Current Balance</h3>
+                <div class="stat-number">$1,840.50</div>
+            </div>
+        </div>
+
+        <div class="tables-grid">
+            <div class="table-card">
+                <h3><i class="fas fa-truck"></i> Recent Orders</h3>
+                <table id="recentOrdersTable">
+                    <thead><tr><th>Order ID</th><th>Customer</th><th>Amount</th><th>Status</th></tr></thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div class="table-card">
+                <h3><i class="fas fa-code-branch"></i> My Products</h3>
+                <table id="myProductsTable">
+                    <thead><tr><th>Product ID</th><th>Name</th><th>Price</th><th>Stock</th></tr></thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="add-product-card">
+            <h3><i class="fas fa-plus-circle"></i> Quick Add Product</h3>
+            <div class="form-row">
+                <div class="form-group"><label>Product Image URL</label><input type="text" id="productImage" placeholder="https://..."></div>
+                <div class="form-group"><label>Product Name</label><input type="text" id="productName" placeholder="e.g., Handmade Vase"></div>
+                <div class="form-group"><label>Price (EGP)</label><input type="number" id="productPrice" placeholder="0"></div>
+                <div class="form-group"><label>Quantity</label><input type="number" id="productQty" placeholder="10"></div>
+                <div class="form-group"><label>Category</label>
+                    <select id="productCategory">
+                        <option value="pottery">Pottery</option>
+                        <option value="jewelry">Jewelry</option>
+                        <option value="textiles">Textiles</option>
+                        <option value="decor">Home Decor</option>
+                    </select>
+                </div>
+            </div>
+            <button class="btn-submit" onclick="addProduct()"><i class="fas fa-save"></i> Add Product</button>
+        </div>
+    </div>
+
+    <!-- ==================== PRODUCTS SECTION ==================== -->
+    <div id="productsSection" class="section">
+        <div class="table-card">
+            <h3><i class="fas fa-boxes"></i> All Products</h3>
+            <table id="allProductsTable">
+                <thead><tr><th>ID</th><th>Image</th><th>Name</th><th>Price</th><th>Stock</th><th>Action</th></tr></thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- ==================== ORDERS SECTION ==================== -->
+    <div id="ordersSection" class="section">
+        <div class="table-card">
+            <h3><i class="fas fa-shopping-cart"></i> All Orders</h3>
+            <table id="allOrdersTable">
+                <thead><tr><th>Order ID</th><th>Customer</th><th>Product</th><th>Amount</th><th>Date</th><th>Status</th><th>Action</th></tr></thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- ==================== ANALYTICS SECTION ==================== -->
+    <div id="analyticsSection" class="section">
+        <div class="analytics-grid">
+            <div class="analytics-card">
+                <h3><i class="fas fa-chart-line"></i> Sales Trend</h3>
+                <canvas id="salesChart"></canvas>
+            </div>
+            <div class="analytics-card">
+                <h3><i class="fas fa-chart-pie"></i> Sales by Category</h3>
+                <canvas id="categorySalesChart"></canvas>
+            </div>
+        </div>
+        <div class="analytics-card">
+            <h3><i class="fas fa-chart-bar"></i> Performance Insights</h3>
+            <div class="insight-stats">
+                <div class="insight-item"><div class="insight-value" id="totalOrdersValue">156</div><div>Total Orders</div></div>
+                <div class="insight-item"><div class="insight-value" id="avgOrderValue">$127</div><div>Avg Order Value</div></div>
+                <div class="insight-item"><div class="insight-value" id="topProductValue">Vase</div><div>Top Product</div></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/js-vendor-dashboard.js"></script>
+</body>
+</html>
