@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Lamasat\\Lamasat.Application",
+    "\\Lamasat\\Lamasat.Application\\obj"
   ],
+  "SelectedNode": "\\Lamasat",
   "PreviewInSolutionExplorer": false
 }
