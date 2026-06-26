@@ -61,5 +61,10 @@ namespace Lamasat.Infastructure.Repositories
         {
             return await _dbSet.AnyAsync(predicate);
         }
+
+        public async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+        {
+            return await _context.SaveChangesAsync(cancellationToken);
+        }
     }
 }

@@ -17,5 +17,6 @@ namespace Lamasat.Application.Interfaces
         void Delete(T entity);
         Task<int> CountAsync(Expression<Func<T, bool>>? predicate = null);
         Task<bool> ExistsAsync(Expression<Func<T, bool>> predicate);
+        Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Lamasat.Infastructure;
 using Microsoft.EntityFrameworkCore;
 
 namespace Lamasat.Infrastructure;
