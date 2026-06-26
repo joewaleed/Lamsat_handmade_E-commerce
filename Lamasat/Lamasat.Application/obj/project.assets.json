@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net9.0": {}
+    "net9.0": {
+      "Lamasat.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/Lamasat.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Lamasat.Domain.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Lamasat.Domain/1.0.0": {
+      "type": "project",
+      "path": "../Lamasat.Domain/Lamasat.Domain.csproj",
+      "msbuildProject": "../Lamasat.Domain/Lamasat.Domain.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net9.0": []
+    "net9.0": [
+      "Lamasat.Domain >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\HP\\.nuget\\packages\\": {},
@@ -39,7 +58,11 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "G:\\Lamasat_Project\\LamasatRepo\\Lamasat\\Lamasat.Domain\\Lamasat.Domain.csproj": {
+              "projectPath": "G:\\Lamasat_Project\\LamasatRepo\\Lamasat\\Lamasat.Domain\\Lamasat.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

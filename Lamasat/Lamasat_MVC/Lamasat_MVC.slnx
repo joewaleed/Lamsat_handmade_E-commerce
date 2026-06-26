@@ -1,6 +1,6 @@
 <Solution>
   <Project Path="../Lamasat.Application/Lamasat.Application.csproj" />
   <Project Path="../Lamasat.Domain/Lamasat.Domain.csproj" />
-  <Project Path="../Lamasat.Infastructure/Lamasat.Infastructure.csproj" />
+  <Project Path="../Lamasat.Infastructure/Lamasat.Infrastructure.csproj" />
   <Project Path="Lamasat_MVC.csproj" />
 </Solution>

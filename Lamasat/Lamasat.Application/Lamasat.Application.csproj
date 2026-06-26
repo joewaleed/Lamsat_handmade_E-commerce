@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Lamasat.Domain\Lamasat.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

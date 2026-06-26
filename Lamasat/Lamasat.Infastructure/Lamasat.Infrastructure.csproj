@@ -13,6 +13,7 @@
 
 
   <ItemGroup>
+    <ProjectReference Include="..\Lamasat.Application\Lamasat.Application.csproj" />
     <ProjectReference Include="..\Lamasat.Domain\Lamasat.Domain.csproj" />
   </ItemGroup>
 

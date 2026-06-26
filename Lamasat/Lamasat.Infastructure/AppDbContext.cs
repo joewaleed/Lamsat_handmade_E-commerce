@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace Lamasat.Infastructure;
+namespace Lamasat.Infrastructure;
 
 public partial class AppDbContext : DbContext
 {
